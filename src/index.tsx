@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
-import App from './App';
+import Navbar from './Navbar';
+
+import ProcessA from './ProcessA';
+import ProcessB from './ProcessB';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -9,7 +13,14 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="ProccessA" element={<ProcessA />} />
+        <Route path="ProccessB" element={<ProcessB />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
